@@ -9,6 +9,7 @@ export default {
     };
   },
   stacks(app) {
+    app.setDefaultRemovalPolicy("destroy");
     app.stack(ExampleStack);
-  }
+  },
 } satisfies SSTConfig;
