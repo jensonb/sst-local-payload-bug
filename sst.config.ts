@@ -4,7 +4,7 @@ import { ExampleStack } from "./stacks/ExampleStack";
 export default {
   config(_input) {
     return {
-      name: "sst-local-bug",
+      name: "sst-local-payload-bug",
       region: "us-east-1",
     };
   },
