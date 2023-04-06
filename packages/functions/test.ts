@@ -33,15 +33,23 @@ export const handler = ApiHandler(async () => {
       return success(Array(100).fill(TEST_VARIANT));
     }
 
+    case "6": {
+      return success(Array(600).fill(TEST_VARIANT));
+    }
+
     default:
       throw new Error("invalid test");
   }
 });
 
-const success = (body: unknown): APIGatewayProxyStructuredResultV2 => ({
-  statusCode: 200,
-  body: typeof body === "string" ? body : JSON.stringify(body),
-});
+const success = (body: unknown): APIGatewayProxyStructuredResultV2 => {
+  const res = {
+    statusCode: 200,
+    body: typeof body === "string" ? body : JSON.stringify(body),
+  };
+  console.log("res length: ", JSON.stringify(res).length);
+  return res;
+};
 
 const TEST_VARIANT = {
   size: "S",
